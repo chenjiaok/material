@@ -29,7 +29,7 @@ router.get('/material/findall', (req, res) => {
 			res.send(data)
 			console.log('data',data)
 		}
-		connection.end();
+		//connection.end();
 	})  
 })
 
@@ -44,7 +44,7 @@ router.get('/material/detail', (req, res) => {
 			console.log(data[0])
 			res.send(data[0])
 		}
-		connection.end();
+		//connection.end();
 	})   
 })
 
@@ -65,7 +65,7 @@ router.get('/material/detail/findonly', (req, res) => {
 				res.send('notfound')
 			}        
 		}
-		connection.end();
+		//connection.end();
 	})   
 })
 
@@ -89,7 +89,7 @@ router.get('/material/detail/findlike', (req, res) => {
 				res.send('notfound')
 			}        
 		}
-		connection.end();
+		//connection.end();
 	})    
 })
 
@@ -118,7 +118,7 @@ router.post('/material/add', (req, res) => {
 				})          
 			}    
 		}
-		connection.end();
+		//connection.end();
 	}) 
   
 })
@@ -132,7 +132,7 @@ router.put('/material/put',(req, res) => {
 		} else {
 			res.send(data)
 		}
-		connection.end();  
+		//connection.end();  
 	})  
 })
 
@@ -146,7 +146,7 @@ router.delete('/material/delete/:id',(req, res) => {
 		} else {
 			res.send(data)
 		}
-		connection.end();  
+		//connection.end();  
 	})
 })
 
@@ -161,7 +161,7 @@ router.get('/stock/findall', (req, res) => {
 			res.send(data)
 			console.log(data)
 		}
-		connection.end();
+		//connection.end();
 	}) 
 })
 
@@ -186,7 +186,7 @@ router.get('/stock/detail/findlike', (req, res) => {
 				res.send('notfound')
 			}        
 		}
-		connection.end();
+		//connection.end();
 	})
    
 })
@@ -208,7 +208,7 @@ router.get('/stock/detail/findonly', (req, res) => {
 				res.send('notfound')
 			}      
 		}
-		connection.end();
+		//connection.end();
 	})   
 })
 
@@ -223,7 +223,7 @@ router.get('/stock/detail', (req, res) => {
 			console.log(data)
 			res.send(data)       
 		}
-		connection.end();
+		//connection.end();
 	})   
 })
 
@@ -238,7 +238,7 @@ router.get('/stock/history', (req, res) => {
 			res.send(data)
 			console.log('data',data)
 		}
-		connection.end();
+		//connection.end();
 	})  
 })
 
@@ -254,7 +254,7 @@ router.get('/stock/findin', (req, res) => {
 			res.send(data)
 			console.log('data',data)
 		}
-		connection.end();
+		//connection.end();
 	})  
 })
 
@@ -269,7 +269,7 @@ router.get('/stock/findout', (req, res) => {
 			res.send(data)
 			console.log('data',data)
 		}
-		connection.end();
+		//connection.end();
 	})  
 })
 
@@ -300,7 +300,7 @@ router.post('/stock/put', (req, res) => {
 				})
 			}//else {'not enough'}
 		}
-		connection.end();
+		//connection.end();
 	})   
 })
 

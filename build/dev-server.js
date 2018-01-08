@@ -20,7 +20,7 @@ const autoOpenBrowser = !!config.dev.autoOpenBrowser
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
 const proxyTable = config.dev.proxyTable
-var server = require('../server/index')
+var server = require('../server/router')
 var app = express()
 
 app.use(server)

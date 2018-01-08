@@ -7,7 +7,7 @@ let Busboy = require('busboy')
 var pool  = mysql.createPool({
 	host: 'localhost',
 	user: 'root',
-	password: '000000',
+	password: '00000',
 	port: '3306',
   database: 'omma',
   dateStrings: true   

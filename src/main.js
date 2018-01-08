@@ -6,7 +6,7 @@ import router from './router'
 //import $ from 'jquery'
 import './assets/css/bootstrap.min.css'  
 import './assets/js/bootstrap.min' 
- 
+import "babel-polyfill"; 
 
 import axios from 'axios'
 Vue.prototype.$http = axios

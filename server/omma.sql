@@ -2,13 +2,13 @@
 --删除某一条符合条件的数据
 --DELETE FROM material WHERE code=77;
 
-CREATE TABLE IF NOT EXISTS `material2`(
+CREATE TABLE IF NOT EXISTS `material`(
    `code` VARCHAR(100) NOT NULL,
    `name` VARCHAR(100) NOT NULL,
    `classify` VARCHAR(20) NOT NULL,
    `supplier` VARCHAR(30) NOT NULL,
    `spn` VARCHAR(20) NOT NULL,
-   `updataTime` date,
+   `updataTime` DATETIME,
    PRIMARY KEY ( `code` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
