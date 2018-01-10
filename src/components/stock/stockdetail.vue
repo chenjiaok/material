@@ -1,11 +1,12 @@
 <template>
   <div class="stockdetail">
-      <h1>{{ title }}</h1> 
-      <p>
-        物料编码：<input type="text" name="code" v-model="stocks.code"> 
-        物料描述：<input type="text" name="name" v-model="stocks.name">
-        <input type="submit" value="搜索" v-on:click="findOnly(stocks.code,stocks.name )">
-      </p>    
+    <h1>{{ title }}</h1> 
+    <p>
+      物料编码：<input type="text" name="code" v-model="stocks.code"> 
+      物料描述：<input type="text" name="name" v-model="stocks.name">
+      <input type="submit" value="搜索" v-on:click="findOnly(stocks.code,stocks.name )">
+    </p>
+    <div class="alllist"  v-show="!isActive">    
       <table class="table table-bordered table-hover">
         <thead>
           <tr>
@@ -13,7 +14,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in stocks" v-bind:key="item.code">
+          <tr v-for="item in stocks" v-bind:key="item.id">
+            <td class="hidden">{{ item.id }}</td>
             <td>{{ item.code }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.classify}}</td>
@@ -25,6 +27,37 @@
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="onelist" v-show="isActive">    
+      <table class="table table-bordered table-hover">
+        <tbody>
+          <tr>
+            <td>编码</td><td>{{ stocks.code }}</td> 
+          </tr>
+          <tr>
+            <td>描述</td><td>{{ stocks.name }}</td>
+          </tr>
+          <tr>
+            <td>分类</td><td>{{ stocks.classify }}</td>
+          </tr>
+          <tr>
+            <td>供应商</td><td>{{ stocks.supplier }}</td>
+          </tr>
+          <tr>
+            <td>供应商料号</td><td>{{ stocks.spn }}</td>
+          </tr>
+          <tr>
+            <td>数量</td><td>{{ stocks.count }}</td>
+          </tr>          
+          <tr>
+            <td>时间</td><td>{{ stocks.updataTime }}</td>
+          </tr>
+          <tr>
+            <td>备注</td><td>{{ stocks.remarks }}</td>
+          </tr>           
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -34,6 +67,7 @@ export default {
   data () {
     return {
       title: '单物料物料库存变更详情',
+      isActive:true,
       stocks:[],
     }
   },
@@ -43,7 +77,15 @@ export default {
       console.log('query.id',this.$route.query.id)
       this.$http.get('/stock/detail/findonly',{params: {id: this.$route.query.id}}).then((res) => {
         console.log('res.data',JSON.stringify(res.data))
-        this.stocks = res.data; 
+        console.log(res.data.length)
+        if (res.data.length <2) {
+              this.isActive = true
+              this.stocks = res.data[0];
+              
+            } else {
+              this.isActive = false
+              this.stocks = res.data;
+            } 
       }) 
     }else {
       this.findall()

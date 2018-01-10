@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: '000000',
+	password: '000000',//B1Ll-CD=ku2i
 	port: '3306',
 	database: 'omma'
 })
@@ -195,15 +195,17 @@ router.get('/stock/detail/findlike', (req, res) => {
 router.get('/stock/detail/findonly', (req, res) => {
   console.log('get stock detail by id')
   console.log('req.query.id:', req.query.id)
-  var sql = 'select * from stock where code=' + req.query.id  
+  var sql = 'select * from stock where code=' + req.query.id
 	connection.query(sql, (err,data) => {
 		if (err) {
 			console.log(err)
 		} else {
-			console.log(data[0])
-			console.log(!data[0])
+      console.log(data[0])
+      console.log(data)
+			//console.log(data[0])
 			if(data[0]){
-				res.send(data[0])
+				res.send(data)
+				console.log('send')
 			} else {
 				res.send('notfound')
 			}      
@@ -211,6 +213,7 @@ router.get('/stock/detail/findonly', (req, res) => {
 		//connection.end();
 	})   
 })
+
 
 //stock/detail
 router.get('/stock/detail', (req, res) => {

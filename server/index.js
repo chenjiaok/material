@@ -222,10 +222,10 @@ router.get('/stock/detail/findonly', (req, res) => {
       if (err) {
         console.log(err)
       } else {
-        console.log(data[0])
-        console.log(!data[0])
-        if(data[0]){
-          res.send(data[0])
+        console.log(data)
+       // console.log()
+        if(data){
+          res.send(data)
         } else {
           res.send('notfound')
         }      

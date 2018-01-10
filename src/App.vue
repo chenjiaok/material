@@ -32,7 +32,7 @@
               <li><router-link to="/stock/out">出库记录</router-link></li>             
             </ul>
           </li>
-          <!--li><router-link to="StockOut">采购记录</router-link></li!-->
+          <li><router-link to="StockOut">BOM组</router-link></li>
           <!--li><router-link to="StockOut">生产计划</router-link></li!-->
           <!--li><router-link to="StockOut">发票信息记录</router-link></li!-->
           <!--li><router-link to="StockOut">成品BOM</router-link></li!-->
@@ -57,4 +57,5 @@ export default {
   font-family: Arial;
   margin-top:30px;
 }
+
 </style>

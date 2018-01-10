@@ -11,7 +11,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in stocks" v-bind:key="item.code">
+          <tr v-for="item in stocks" v-bind:key="item.id">
+            <td class="hidden">{{ item.id }}</td>
             <td>{{ item.code }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.classify}}</td>
