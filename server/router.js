@@ -7,7 +7,8 @@ var connection = mysql.createConnection({
 	user: 'root',
 	password: '000000',//B1Ll-CD=ku2i
 	port: '3306',
-	database: 'omma'
+	database: 'omma',
+	dateStrings: true   
 })
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: false }))
@@ -125,11 +126,14 @@ router.post('/material/add', (req, res) => {
 
 //material/put
 router.put('/material/put',(req, res) => {
+  console.log(req.body)
   var sql = `update material set name=?,classify=?,supplier=?,spn=?,updataTime=? where code=` + req.body.code
+  console.log(sql)
 	connection.query(sql, [req.body.name, req.body.classify, req.body.supplier, req.body.spn, req.body.updataTime], (err, data) => {
 		if (err) {
 			res.send(err)
 		} else {
+			console.log(data)
 			res.send(data)
 		}
 		//connection.end();  

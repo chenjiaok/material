@@ -6,17 +6,17 @@ import router from './router'
 //import $ from 'jquery'
 import './assets/css/bootstrap.min.css'  
 import './assets/js/bootstrap.min' 
-import "babel-polyfill"; 
-
+import "babel-polyfill"
 import axios from 'axios'
+
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+	el: '#app',
+	router,
+	template: '<App/>',
+	components: { App }
 })

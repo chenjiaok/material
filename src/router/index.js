@@ -22,83 +22,71 @@ import StockHistory from '@/components/stock/stockhistory'
 Vue.use(Router)
 
 export default new Router({
- // mode: 'history',
- //base: '/ttms/',
-  routes: [
-    {
-      path: '/',     
-      component: hello,
-    },
-    {
-      path: '/material',
-      component: material,
-      children: [
-        {
-          path: '/',
-          component: MaterialTotal
-        },
-        {
-          path: 'total',
-          component: MaterialTotal
-        },
-        {
-          path: 'detail',
-          component: MaterialDetail
-        },
-        {
-          path: 'add',
-          component: MaterialAdd
-        },
-        {
-          path: 'put',
-          component: MaterialPut
-        },
-      ]
-    },
-    {
-      path: '/stock',
-      component: stock,
-      children: [
-        {
-          path: '/',
-          component: StockTotal
-        },
-        {
-          path: 'total',
-          component: StockTotal
-        },
-        {
-          path: 'detail',
-          component: StockDetail
-        },
-        {
-          path: 'in',
-          component: StockIn
-        },
-        {
-          path: 'out',
-          component: StockOut
-        },
-        {
-          path: 'put',
-          component: StockPut
-        },
-        {
-          path: 'history',
-          component: StockHistory
-        },
-      ]
-    },  
-      /*
 
-        MaterialTotal: MaterialTotal,        
-        materialdetail: materialdetail,
-        StockDetail: StockDetail,
-        StockTotal: StockTotal,
-        InStock: InStock,
-        OutStock: OutStock,
-        StockHistory: StockHistory,
-      }*/
-    
-  ]
+	routes: [
+		{
+			path: '/',     
+			component: hello,
+		},
+		{
+			path: '/material',
+			component: material,
+			children: [
+				{
+					path: '/',
+					component: MaterialTotal
+				},
+				{
+					path: 'total',
+					component: MaterialTotal
+				},
+				{
+					path: 'detail',
+					component: MaterialDetail
+				},
+				{
+					path: 'add',
+					component: MaterialAdd
+				},
+				{
+					path: 'put',
+					component: MaterialPut
+				},
+			]
+		},
+		{
+			path: '/stock',
+			component: stock,
+			children: [
+				{
+					path: '/',
+					component: StockTotal
+				},
+				{
+					path: 'total',
+					component: StockTotal
+				},
+				{
+					path: 'detail',
+					component: StockDetail
+				},
+				{
+					path: 'in',
+					component: StockIn
+				},
+				{
+					path: 'out',
+					component: StockOut
+				},
+				{
+					path: 'put',
+					component: StockPut
+				},
+				{
+					path: 'history',
+					component: StockHistory
+				},
+			]
+		},  
+	]
 })
